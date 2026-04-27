@@ -20,11 +20,9 @@ const OpeningCrawl = () => {
     }, [openingCrawl])
 
 
-    if (openingCrawl) {
-        return (<Text text={openingCrawl}/>)
-    } else {
-        return (<Text text={`Loading...`}/>)
-    }
+    return (
+        <Text text={openingCrawl || `Loading...`}/>
+    )
 
 
 }

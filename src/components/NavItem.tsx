@@ -6,9 +6,7 @@ const NavItem = ({itemTitle}: {itemTitle: string}) => {
     const {changePage} = useContext(SWContext);
 
     return (
-        <div onClick={() => changePage(itemTitle)}>
-            <Button text={itemTitle}/>
-        </div>
+            <Button text={itemTitle} callback={() => changePage(itemTitle)}/>
     )
 }
 
