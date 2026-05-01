@@ -4,6 +4,7 @@ import Footer from "./components/Footer.tsx";
 import {useState} from "react";
 import {navItems} from "./utils/constants.ts";
 import {SWContext} from "./utils/context.ts";
+import {Route, Routes} from "react-router";
 
 function App() {
     const [page, setPage] = useState(navItems[0]);
@@ -11,7 +12,9 @@ function App() {
     return (
         <div className={'mx-2'}>
             <SWContext value={{page, changePage: setPage}}>
-                <Header/>
+                <Routes>
+                    {[`*` , `/${navItems[1]}/:heroId`].map(path =><Route key={path} path={path} element={<Header/>}/>)}
+                </Routes>
                 <Main/>
                 <Footer/>
             </SWContext>
