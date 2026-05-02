@@ -4,13 +4,15 @@ import {characters, defaultHero} from "../utils/constants.ts";
 import {useParams} from "react-router";
 
 export const useValidHero = () => {
-    const {changeHero} = useContext(SWContext)
+    const {changeHero,changeIsHero} = useContext(SWContext)
     const {heroId = defaultHero} = useParams()
 
     useEffect(() => {
         if(!(heroId in characters)){
+            changeIsHero(false)
             return;
         }
+        changeIsHero(true);
         changeHero(heroId);
     },[heroId, changeHero])
 
