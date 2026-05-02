@@ -13,4 +13,4 @@ export interface Hero {
 //     [key: string]: Hero;
 // }
 
-export type Characters = Record<string, Hero>;
+// export type Characters = Record<string, Hero>;
